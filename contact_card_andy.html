@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Submit Joke</title>
+	<link rel="stylesheet" type="text/css" href="contact_card_andy.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$('form').submit(function(){
+				return false;
+			});
+
+			$('button').click(function(){
+				$('form').submit();   // hard submit when button is clicked
+				var $tr = $('<div />');
+    			$tr.append($("<h2 />", { text: $("#first").val() }))
+   				$tr.append($("<h2 />", { text: $("#last").val() }))
+   				$tr.append($("<h3 />", { text: "Click to see Joke" }))
+    			$tr.append($("<p />", { text: $("#joke").val() }))
+    			$tr.appendTo('#joke_cards');
+    			$('p:last').hide();            // hide the newly submitted joke
+    			$('form').trigger("reset");  // reset the form after submission
+			});
+
+			// flip the card when clicked
+			$(document).on('click', '#joke_cards div', function(){
+				if ( $(this).children('p').css('display') == 'none' ){
+					$(this).children('h2, h3').hide();
+					$(this).children('p').show();
+				} else {
+       				$(this).children('h2, h3').show();
+					$(this).children('p').hide();
+    			}
+			})
+
+
+	});
+	</script>
+</head>
+<body>
+	<h1>Think You're Funny? Submit a Joke!</h1>
+	<div id='left_form'>
+		<form action="process.php" method="post">
+		    <label>
+		        First Name: <input id='first' type="text" name="first_name" placeholder="First Name" required>
+		    </label>
+		    <label>
+		        Last Name: <input id='last' type="text" name="last_name" placeholder="Last Name" required>
+		    </label>
+		    <p>Enter Joke Here:</p>
+	  		<textarea id='joke' name="joke" placeholder="LOL" required></textarea>
+		</form>
+		<button>Submit Joke</button>
+	</div>
+	<div id='joke_cards'>
+	</div>
+</body>
+</html>

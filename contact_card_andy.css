@@ -1,0 +1,55 @@
+
+h1{
+	width: 600px;
+	border-bottom: 1px solid black;
+	font-family: 'helvetica neue', arial, verdana, sans-serif;
+}
+label{
+	width: 300px;
+	display: block;
+	margin-bottom: 10px;
+	font-family: 'helvetica neue', arial, verdana, sans-serif;
+}
+button{
+	margin-top: 10px;
+}
+
+p{
+	font-family: 'helvetica neue', arial, verdana, sans-serif;
+}
+
+textarea{
+	width: 300px;
+	height: 50px;
+}
+
+#left_form{
+/*	outline: 1px dotted red;*/
+	display: inline-block; vertical-align: top;
+}
+#joke_cards{
+	min-height: 300px;
+	width: 300px;
+/*	outline: 1px dotted blue;*/
+	display: inline-block; vertical-align: top;
+	margin-left: 20px;
+}
+#joke_cards div{
+	border:1px solid black;
+	height: 150px;
+	width: 300px;
+	display: inline-block; vertical-align: top;
+	font-family: 'helvetica neue', arial, verdana, sans-serif;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+h2{
+	display: inline-block; vertical-align: top;
+	margin-right: 10px;
+}
+
+#joke_cards p{
+	display: inline-block; vertical-align: top;
+	color: blue;
+}
